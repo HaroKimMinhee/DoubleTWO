@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class Question {
-    // 질문 항문
+    // 질문 항목
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //질문항목 번호
 
     @Column( nullable = false)
-    private String item;
+    private String item; //질문명
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private QuestionType questionType;
+    private QuestionType questionType; //질문 제목에 참조
 
     @ManyToOne
     @JoinColumn(name="question_title_id", nullable = false)

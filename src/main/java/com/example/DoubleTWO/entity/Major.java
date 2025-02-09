@@ -12,14 +12,14 @@ public class Major {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //과목번호
 
     @Column(nullable = false)
-    private String name;
+    private String name; //과목명
 
     @ManyToOne
     @JoinColumn(name="identity_id")
-    private Identity identity;
+    private Identity identity; //신원에 참조
 
     @Builder
     public Major(String name, Identity identity) {

@@ -24,15 +24,18 @@ public class QuestionController {
 
     // 설문 제목과 질문을 페이지네이션으로 가져오기
     @GetMapping
-    public String getSurveyPage(@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
+    public String getSurveyPage
+    (@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
         int size = 10;  // 한 페이지에 표시할 설문 제목 수
 
         // 페이지네이션으로 설문 제목 목록 가져오기
-        Page<QuestionTitle> titlePage = questionService.getSurveyTitlesWithPagination(page, size);
+        Page<QuestionTitle> titlePage =
+                questionService.getSurveyTitlesWithPagination(page, size);
         List<QuestionTitle> titleList = titlePage.getContent();
 
         // 설문 제목에 해당하는 질문 목록 가져오기
-        Map<Long, List<Question>> questionMap = questionService.getQuestionsBySurveyId(titleList);
+        Map<Long, List<Question>> questionMap =
+                questionService.getQuestionsBySurveyId(titleList);
 
         model.addAttribute("titleList", titleList);
         model.addAttribute("questionMap", questionMap);  // questionMap을 모델에 추가

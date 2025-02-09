@@ -7,11 +7,10 @@ import com.example.DoubleTWO.entity.QuestionType;
 import java.util.List;
 
 public record QuestionTitleDTO (
-        Long id,
-        String title,
-        QuestionType questionType,
-        List<Question> questions,
-        Identity identity
+        Long id, //질문제목 번호
+        String title, //질문제목명//
+        List<Question> questions, //질문 항목에 매칭
+        Identity identity //신원에 참조
 ) {
 
 }

@@ -64,7 +64,8 @@
 <!-- 페이지네이션 -->
 <div class="pagination">
   <!-- 이전 페이지 링크 -->
-  <a th:if="${currentPage > 0}" th:href="@{/survey?page=${currentPage - 1}}" class="prev">이전 페이지</a>
+  <a th:if="${currentPage > 0}" th:href="@{/survey?page=${currentPage - 1}}" class="prev">
+    이전 페이지</a>
 
   <!-- 페이지 번호들 -->
   <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
@@ -73,7 +74,9 @@
   </span>
 
   <!-- 다음 페이지 링크 -->
-  <a th:if="${currentPage < totalPages - 1}" th:href="@{/survey?page=${currentPage + 1}}" class="next">다음 페이지</a>
+  <a th:if="${currentPage < totalPages - 1}"
+     th:href="@{/survey?page=${currentPage + 1}}" class="next">
+    다음 페이지</a>
 </div>
 
 <footer class="text-center mt-5">
